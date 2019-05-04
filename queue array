@@ -1,0 +1,35 @@
+
+public class  QueueArray<T> implements  IQueue{
+	int length=0;
+	int front=-1;
+	int rear=-1;
+	int n;
+	Object queue []=new Object [100];
+	
+public void enqueue (Object data)
+{
+rear++;
+queue[rear]=data;
+length++;
+}
+public  T dequeue()
+{
+	T object =(T) queue[front];
+	front++;
+	length--;
+	return (T)  object ;
+}
+public boolean isEmpty()
+{
+	return length==0;
+}
+public int size ()
+{
+	return length;
+}
+
+	public static void main(String[] args) {
+  
+	}
+
+}
