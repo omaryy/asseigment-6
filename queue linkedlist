@@ -1,0 +1,71 @@
+
+public class linkedlistimplementation <T> implements IQueue  {
+	ListNode<T> front;
+	ListNode<T> rear;
+	int length;
+	public linkedlistimplementation ()
+	{
+		front=null;
+		rear=null;
+		length=0;
+	}
+	private  static class  ListNode <T>
+	{
+		T data;
+	 ListNode <T>next;
+		
+		public ListNode (  T data) {
+			this.data=data;
+		}
+	}
+	public void enqueue(Object  newitem)
+	{
+		ListNode<T> newnode=new ListNode (newitem);
+	if (length==0)	
+	{
+		front= newnode;
+		rear=newnode;
+	}
+	else
+	{
+		
+		rear.next=newnode;
+		rear=newnode;
+	}
+	length++;	
+	}
+	public Object dequeue ()
+	{
+		ListNode <T> temp=front;
+		if (length==0)
+		{
+			System.out.print("the Queue is empty");
+			
+		}
+		else 
+		{
+		front=front.next;
+		temp.next=null;
+		length--;	
+		}
+	return temp;
+	}
+	public int size ()
+	{
+		return length;
+	}
+	public boolean isEmpty()
+	{
+	return length==0;	
+	}
+
+	
+	
+	public static void main(String[] args) {
+	
+	linkedlistimplementation o=new linkedlistimplementation ();
+
+
+	}
+
+}
