@@ -1,5 +1,5 @@
 
-public class linkedlistimplementation <T> implements IQueue  {
+public class linkedlistimplementation <T> implements IQueue ,ILinkedBased {
 	ListNode<T> front;
 	ListNode<T> rear;
 	int length;
